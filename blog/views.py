@@ -5,6 +5,10 @@ from .models import Post
 
 # Create your views here.
 def post_list(request):
+    """
+    Function-based view
+    """
+
     post_list = Post.published.all()
     paginator = Paginator(post_list, 3)
     page_number = request.GET.get("page", 1)
